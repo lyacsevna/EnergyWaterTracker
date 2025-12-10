@@ -52,7 +52,9 @@ fun MainNavHost() {
                 ServiceScreen()
             }
             composable(Screen.Settings.route) {
-                SettingsScreen()
+                SettingsScreen(
+                    viewModel = TODO()
+                )
             }
         }
     }

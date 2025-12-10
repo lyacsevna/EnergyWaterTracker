@@ -135,7 +135,6 @@ fun InputScreen(
             singleLine = false
         )
 
-        // Кнопка сохранения
         Button(
             onClick = {
                 val readingValue = value.toDoubleOrNull()
@@ -143,7 +142,7 @@ fun InputScreen(
                     val reading = MeterReading(
                         type = selectedType,
                         value = readingValue,
-                        date = Date(),
+                        date = Date().time, // Изменено: Date().time вместо Date()
                         notes = notes
                     )
                     viewModel.addReading(reading)

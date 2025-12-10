@@ -4,7 +4,6 @@ import com.vstu.energywatertracker.data.local.dao.MeterReadingDao
 import com.vstu.energywatertracker.data.local.entity.MeterReading
 import com.vstu.energywatertracker.data.local.entity.MeterType
 import kotlinx.coroutines.flow.Flow
-import java.util.Date
 import javax.inject.Inject
 
 class MeterRepository @Inject constructor(
@@ -33,13 +32,5 @@ class MeterRepository @Inject constructor(
 
     suspend fun getLatestReadingByType(type: MeterType): MeterReading? {
         return meterReadingDao.getLatestReadingByType(type)
-    }
-
-    fun getReadingsBetweenDates(
-        startDate: Date,
-        endDate: Date,
-        type: MeterType
-    ): Flow<List<MeterReading>> {
-        return meterReadingDao.getReadingsBetweenDates(startDate, endDate, type)
     }
 }

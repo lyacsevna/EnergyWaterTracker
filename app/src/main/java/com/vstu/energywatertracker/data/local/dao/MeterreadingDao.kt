@@ -9,7 +9,7 @@ import java.util.Date
 @Dao
 interface MeterReadingDao {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(reading: MeterReading): Long
 
     @Update
@@ -24,16 +24,14 @@ interface MeterReadingDao {
     @Query("SELECT * FROM meter_readings WHERE type = :type ORDER BY date DESC")
     fun getReadingsByType(type: MeterType): Flow<List<MeterReading>>
 
-    @Query("SELECT * FROM meter_readings WHERE date BETWEEN :startDate AND :endDate AND type = :type")
-    fun getReadingsBetweenDates(
-        startDate: Date,
-        endDate: Date,
-        type: MeterType
-    ): Flow<List<MeterReading>>
-
-    @Query("SELECT * FROM meter_readings WHERE id = :id")
-    suspend fun getReadingById(id: Long): MeterReading?
-
     @Query("SELECT * FROM meter_readings WHERE type = :type ORDER BY date DESC LIMIT 1")
     suspend fun getLatestReadingByType(type: MeterType): MeterReading?
+
+    // Изменим параметры на Long вместо Date
+    @Query("SELECT * FROM meter_readings WHERE date BETWEEN :startDate AND :endDate AND type = :type")
+    fun getReadingsBetweenDates(
+        startDate: Long, // Изменено с Date на Long
+        endDate: Long,   // Изменено с Date на Long
+        type: MeterType
+    ): Flow<List<MeterReading>>
 }
