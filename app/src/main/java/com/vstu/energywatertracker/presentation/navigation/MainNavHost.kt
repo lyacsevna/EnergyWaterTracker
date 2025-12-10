@@ -7,6 +7,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -21,7 +22,7 @@ import com.vstu.energywatertracker.presentation.screen.statistics.StatisticsScre
 import com.vstu.energywatertracker.presentation.viewmodel.MeterViewModel
 
 @Composable
-fun MainNavHost(viewModel: MeterViewModel) {
+fun MainNavHost() {
     val navController = rememberNavController()
 
     Scaffold(
@@ -33,15 +34,18 @@ fun MainNavHost(viewModel: MeterViewModel) {
             modifier = Modifier.padding(paddingValues)
         ) {
             composable(Screen.Main.route) {
+                val viewModel: MeterViewModel = hiltViewModel()
                 MainScreen(viewModel)
             }
             composable(Screen.Input.route) {
+                val viewModel: MeterViewModel = hiltViewModel()
                 InputScreen(
                     viewModel = viewModel,
                     onNavigateToCamera = { /* Навигация к камере */ }
                 )
             }
             composable(Screen.Statistics.route) {
+                val viewModel: MeterViewModel = hiltViewModel()
                 StatisticsScreen(viewModel)
             }
             composable(Screen.Service.route) {

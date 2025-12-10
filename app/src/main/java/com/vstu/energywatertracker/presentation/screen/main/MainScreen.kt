@@ -21,7 +21,7 @@ import java.util.*
 
 @Composable
 fun MainScreen(viewModel: MeterViewModel) {
-    val readings by viewModel.readings.collectAsState(emptyList())
+    val readings by viewModel.readings.collectAsState()
 
     Column(
         modifier = Modifier
