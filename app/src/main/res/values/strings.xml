@@ -1,3 +1,40 @@
 <resources>
-    <string name="app_name">EnergyWaterTracker</string>
+    <string name="app_name">Учет энергии и воды</string>
+
+    <!-- Типы счетчиков -->
+    <string name="electricity">Электричество</string>
+    <string name="water_cold">Холодная вода</string>
+    <string name="water_hot">Горячая вода</string>
+
+    <!-- Основные экраны -->
+    <string name="home">Главная</string>
+    <string name="input">Ввод</string>
+    <string name="statistics">Статистика</string>
+    <string name="service">Сервис</string>
+    <string name="settings">Настройки</string>
+
+    <!-- Кнопки -->
+    <string name="save">Сохранить</string>
+    <string name="scan">Сканировать</string>
+    <string name="from_gallery">Из галереи</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+
+    <!-- Поля ввода -->
+    <string name="meter_type">Тип счетчика</string>
+    <string name="meter_value">Показания</string>
+    <string name="notes">Заметки</string>
+
+    <!-- Сообщения -->
+    <string name="no_data">Нет данных</string>
+    <string name="loading">Загрузка...</string>
+    <string name="error">Ошибка</string>
+
+    <!-- Уведомления -->
+    <string name="notification_title">Пора передать показания!</string>
+    <string name="notification_body">Не забудьте передать показания счетчиков за этот месяц</string>
+
+    <!-- Единицы измерения -->
+    <string name="unit_kwh">кВт·ч</string>
+    <string name="unit_cubic_meter">м³</string>
 </resources>
