@@ -285,8 +285,9 @@ private fun prepareChartData(readings: List<MeterReading>, period: Period): List
         val year = calendar.get(Calendar.YEAR)
 
         val monthReadings = readings.filter { reading ->
+            // СОЗДАЕМ Calendar ИЗ Long ЗНАЧЕНИЯ reading.date
             val readingCalendar = Calendar.getInstance().apply {
-                timeInMillis = reading.date  // Используем Long напрямую
+                timeInMillis = reading.date // Используем Long напрямую
             }
             readingCalendar.get(Calendar.MONTH) == month &&
                     readingCalendar.get(Calendar.YEAR) == year

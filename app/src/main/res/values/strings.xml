@@ -1,40 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Основные строки приложения -->
     <string name="app_name">Учет энергии и воды</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="no_data">Нет данных</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="edit">Редактировать</string>
+    <string name="error">Ошибка</string>
+    <string name="success">Успешно</string>
+    <string name="loading">Загрузка...</string>
+
+    <!-- Навигация -->
+    <string name="nav_home">Главная</string>
+    <string name="nav_input">Ввод</string>
+    <string name="nav_statistics">Статистика</string>
+    <string name="nav_service">Сервис</string>
+    <string name="nav_settings">Настройки</string>
 
     <!-- Типы счетчиков -->
     <string name="electricity">Электричество</string>
     <string name="water_cold">Холодная вода</string>
     <string name="water_hot">Горячая вода</string>
 
-    <!-- Основные экраны -->
-    <string name="home">Главная</string>
-    <string name="input">Ввод</string>
-    <string name="statistics">Статистика</string>
-    <string name="service">Сервис</string>
-    <string name="settings">Настройки</string>
-
-    <!-- Кнопки -->
-    <string name="save">Сохранить</string>
-    <string name="scan">Сканировать</string>
+    <!-- Кнопки и действия -->
+    <string name="add_reading">Добавить показание</string>
+    <string name="enter_readings">Введите показания</string>
+    <string name="scan_counter">Сканировать счетчик</string>
     <string name="from_gallery">Из галереи</string>
-    <string name="cancel">Отмена</string>
-    <string name="delete">Удалить</string>
-
-    <!-- Поля ввода -->
-    <string name="meter_type">Тип счетчика</string>
-    <string name="meter_value">Показания</string>
     <string name="notes">Заметки</string>
+    <string name="history">История</string>
+    <string name="export_data">Экспорт данных</string>
+    <string name="import_data">Импорт данных</string>
+    <string name="clear_all_data">Очистить все данные</string>
 
-    <!-- Сообщения -->
-    <string name="no_data">Нет данных</string>
-    <string name="loading">Загрузка...</string>
-    <string name="error">Ошибка</string>
+    <!-- Статистика -->
+    <string name="statistics_title">Статистика потребления</string>
+    <string name="total_records">Всего записей</string>
+    <string name="average">Среднее</string>
+    <string name="maximum">Максимальное</string>
+    <string name="minimum">Минимальное</string>
+    <string name="total">Общее</string>
+    <string name="last_month">Месяц</string>
+    <string name="last_3_months">Квартал</string>
+    <string name="last_6_months">6 месяцев</string>
+    <string name="last_year">Год</string>
+    <string name="bar_chart">Столбчатая</string>
+    <string name="pie_chart">Круговая</string>
+
+    <!-- Сервис -->
+    <string name="service_centers">Сервисные центры</string>
+    <string name="list_view">Список</string>
+    <string name="map_view">Карта</string>
+    <string name="service_center_template">Сервисный центр №%d</string>
+    <string name="map_placeholder">Карта сервисных центров\n(будет реализована с Google Maps)</string>
+
+    <!-- Настройки -->
+    <string name="settings_title">Настройки</string>
+    <string name="notifications">Уведомления</string>
+    <string name="reminders">Напоминания о показаниях</string>
+    <string name="reminder_day">День месяца для напоминания:</string>
+    <string name="dark_theme">Темная тема</string>
+    <string name="data_management">Управление данными</string>
+    <string name="about_app">О приложении</string>
+    <string name="version">Версия 1.0</string>
+    <string name="university">ВГТУ 2025</string>
+    <string name="course_project">Курсовой проект по РПДМУ</string>
+    <string name="student">Студент: Ремнева С.А., группа бПО-221</string>
+    <string name="supervisor">Руководитель: В.В. Сокольников</string>
+
+    <!-- Диалоги и подтверждения -->
+    <string name="confirm_delete">Удалить запись?</string>
+    <string name="confirm_clear">Очистить все данные?</string>
+    <string name="cannot_undone">Это действие нельзя отменить.</string>
+    <string name="export_format">Выберите формат экспорта:</string>
+    <string name="format_csv">CSV файл</string>
+    <string name="format_excel">Excel файл</string>
+    <string name="format_json">JSON файл</string>
 
     <!-- Уведомления -->
-    <string name="notification_title">Пора передать показания!</string>
-    <string name="notification_body">Не забудьте передать показания счетчиков за этот месяц</string>
+    <string name="notification_channel_name">Напоминания о показаниях</string>
+    <string name="notification_channel_description">Напоминания о необходимости передачи показаний счетчиков</string>
 
     <!-- Единицы измерения -->
-    <string name="unit_kwh">кВт·ч</string>
+    <string name="unit_kw">кВт</string>
     <string name="unit_cubic_meter">м³</string>
 </resources>

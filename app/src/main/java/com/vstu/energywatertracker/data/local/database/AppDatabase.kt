@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.vstu.energywatertracker.data.local.converters.Converters
 import com.vstu.energywatertracker.data.local.dao.MeterReadingDao
 import com.vstu.energywatertracker.data.local.entity.MeterReading
 
@@ -12,6 +14,7 @@ import com.vstu.energywatertracker.data.local.entity.MeterReading
     version = 1,
     exportSchema = false
 )
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun meterReadingDao(): MeterReadingDao

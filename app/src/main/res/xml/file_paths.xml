@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<paths>
-    <cache-path name="cache" path="." />
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Внешний кэш для временных файлов -->
     <external-cache-path name="external_cache" path="." />
+    <!-- Внутренний кэш -->
+    <cache-path name="internal_cache" path="." />
+    <!-- Внешние файлы -->
     <external-files-path name="external_files" path="." />
+    <!-- Внутренние файлы -->
+    <files-path name="internal_files" path="." />
 </paths>

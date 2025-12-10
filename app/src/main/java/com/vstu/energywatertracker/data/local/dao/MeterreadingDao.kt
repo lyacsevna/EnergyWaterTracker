@@ -30,8 +30,8 @@ interface MeterReadingDao {
     // Изменим параметры на Long вместо Date
     @Query("SELECT * FROM meter_readings WHERE date BETWEEN :startDate AND :endDate AND type = :type")
     fun getReadingsBetweenDates(
-        startDate: Long, // Изменено с Date на Long
-        endDate: Long,   // Изменено с Date на Long
+        startDate: Long,
+        endDate: Long,
         type: MeterType
     ): Flow<List<MeterReading>>
 }

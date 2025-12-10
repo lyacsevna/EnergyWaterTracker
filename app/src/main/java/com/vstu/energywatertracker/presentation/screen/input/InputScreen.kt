@@ -103,17 +103,14 @@ fun InputScreen(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+            // В InputScreen.kt замените кнопку сканирования:
             Button(
                 onClick = {
-                    if (hasCameraPermission(context)) {
-                        permissionLauncher.launch(Manifest.permission.CAMERA)
-                    } else {
-                        permissionLauncher.launch(Manifest.permission.CAMERA)
-                    }
+                    onNavigateToCamera() // Вызов навигации к камере
                 },
                 modifier = Modifier.weight(1f)
             ) {
-                Text("Сканировать (скоро)")
+                Text("Сканировать")
             }
 
             Button(

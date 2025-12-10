@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.vstu.energywatertracker.presentation.screen.camera.CameraScreen
 import com.vstu.energywatertracker.presentation.screen.input.InputScreen
 import com.vstu.energywatertracker.presentation.screen.main.MainScreen
 import com.vstu.energywatertracker.presentation.screen.service.ServiceScreen
@@ -41,7 +42,9 @@ fun MainNavHost() {
                 val viewModel: MeterViewModel = hiltViewModel()
                 InputScreen(
                     viewModel = viewModel,
-                    onNavigateToCamera = { /* Навигация к камере */ }
+                    onNavigateToCamera = {
+                        navController.navigate(Screen.Camera.route)
+                    }
                 )
             }
             composable(Screen.Statistics.route) {
@@ -52,8 +55,19 @@ fun MainNavHost() {
                 ServiceScreen()
             }
             composable(Screen.Settings.route) {
-                SettingsScreen(
-                    viewModel = TODO()
+                val viewModel: MeterViewModel = hiltViewModel()
+                SettingsScreen(viewModel = viewModel)
+            }
+            composable(Screen.Camera.route) {
+                CameraScreen(
+                    onImageCaptured = { uri ->
+                        // Обработка захваченного изображения
+                        // Можно вернуться на экран ввода с данными
+                        navController.popBackStack()
+                    },
+                    onBack = {
+                        navController.popBackStack()
+                    }
                 )
             }
         }
@@ -101,6 +115,7 @@ sealed class Screen(val route: String) {
     object Statistics : Screen("statistics")
     object Service : Screen("service")
     object Settings : Screen("settings")
+    object Camera : Screen("camera")
 }
 
 enum class BottomNavItem(
